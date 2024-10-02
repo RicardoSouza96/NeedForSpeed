@@ -6,6 +6,7 @@ class RemoteControlCar
     private int speed;
     private int batteryDrain;
     private int metersDriven = 0;
+    private int battery = 100;
 
     public RemoteControlCar(int speed, int batteryDrain)
     {
@@ -13,16 +14,17 @@ class RemoteControlCar
         this.batteryDrain = batteryDrain;
     }
 
-    public bool BatteryDrained()
-    {
-        throw new NotImplementedException("Please implement the RemoteControlCar.BatteryDrained() method");
-    }
+    public bool BatteryDrained() => battery > 0 && battery >= batteryDrain ? false : true;
 
     public int DistanceDriven() => metersDriven;
 
     public void Drive()
     {
-        this.metersDriven = speed;
+        if(battery > 0 && battery >= batteryDrain)
+        {
+            this.metersDriven += speed;
+            this.battery -= batteryDrain;
+        }
     }
 
     public static RemoteControlCar Nitro()
