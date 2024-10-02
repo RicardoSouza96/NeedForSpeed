@@ -3,6 +3,14 @@ using System;
 class RemoteControlCar
 {
     // TODO: define the constructor for the 'RemoteControlCar' class
+    private int speed;
+    private int batteryDrain;
+
+    public RemoteControlCar(int speed, int batteryDrain)
+    {
+        this.speed = speed;
+        this.batteryDrain = batteryDrain;
+    }
 
     public bool BatteryDrained()
     {
@@ -28,6 +36,12 @@ class RemoteControlCar
 class RaceTrack
 {
     // TODO: define the constructor for the 'RaceTrack' class
+    private int distance;
+
+    public RaceTrack(int distance)
+    {
+        this.distance = distance;
+    }
 
     public bool TryFinishTrack(RemoteControlCar car)
     {
