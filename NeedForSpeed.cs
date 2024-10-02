@@ -5,6 +5,7 @@ class RemoteControlCar
     // TODO: define the constructor for the 'RemoteControlCar' class
     private int speed;
     private int batteryDrain;
+    private int metersDriven = 0;
 
     public RemoteControlCar(int speed, int batteryDrain)
     {
@@ -17,14 +18,11 @@ class RemoteControlCar
         throw new NotImplementedException("Please implement the RemoteControlCar.BatteryDrained() method");
     }
 
-    public int DistanceDriven()
-    {
-        throw new NotImplementedException("Please implement the RemoteControlCar.DistanceDriven() method");
-    }
+    public int DistanceDriven() => metersDriven;
 
     public void Drive()
     {
-        throw new NotImplementedException("Please implement the RemoteControlCar.Drive() method");
+        this.metersDriven = speed;
     }
 
     public static RemoteControlCar Nitro()
