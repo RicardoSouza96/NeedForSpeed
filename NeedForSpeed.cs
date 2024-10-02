@@ -42,6 +42,12 @@ class RaceTrack
 
     public bool TryFinishTrack(RemoteControlCar car)
     {
-        throw new NotImplementedException("Please implement the RaceTrack.TryFinishTrack() method");
+        while (!car.BatteryDrained())
+            car.Drive();
+
+        if (car.DistanceDriven() >= distance)
+            return true;
+
+        return false;
     }
 }
